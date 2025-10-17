@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Đăng nhập để tham gia cùng Khánh An nha💖</h1>
+    <img src="hehe.jpg" width="5%">
+    <form id="my-form" action="Khánh An.html" onsubmit="return valForm()" >
+    <p>Nhập họ</p>
+    <input type="text" name="firstname"><label id="fn-label"></label>
+    <p>Nhập tên</p>
+    <input type="text" name="lastname"><label id="ln-label"></label>
+    <p>Password</p>
+    <input type="text" name="password"><label id="pw-label"></label>
+    <p>RePassword</p>
+    <input type="text" name="repassword"><label id="re-pw-label"></label><br> <br>
+    <input type="submit" value="Submit">
+    </form>
+</body>
+<script>
+    function valForm(){
+        let form = document.getElementById("my-form").elements;
+        let firstname = form.firstname.value;
+        let lastname = form.lastname.value;
+        let password = form.password.value;
+        let repassword = form.repassword.value;
+        if(firstname.length < 4){
+            document.getElementById("fn-label").innerText = "Chưa đủ 4 ký tự";
+            return false
+        }else{
+            document.getElementById("fn-label").innerText = " ";
+        }
+        if(lastname.length < 4){
+            document.getElementById("ln-label").innerText = "Chưa đủ 4 ký tự";
+            return false;
+        }else{
+            document.getElementById("ln-label").innerText = " ";
+        }
+        if(password.length < 8){
+        document.getElementById("pw-label").innerText = "Mật khẩu chưa đủ 8 ký tự";
+        return false;
+        }else{
+            document.getElementById("pw-label").innerText = " ";
+        }
+        if(password != repassword){
+            document.getElementById("re-pw-label").innerText = "Mật khẩu không khớp";
+            return false;
+        }else{
+            document.getElementById("re-pw-label").innerText = " ";
+        }
+        return true;
+    }
+
+</script>
+</html>
