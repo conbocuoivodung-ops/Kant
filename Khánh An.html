@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jumpscare 😈</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+    }
+    video {
+      display: block;
+      margin: auto;
+      height: 700px;
+      width: 700px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <video id="video" src="jumpscare.mp4" autoplay muted></video>
+  </center>
+
+  <script>
+    const video = document.getElementById("video");
+
+    // Giả autoplay có tiếng bằng Audio API (phát song song)
+    const sound = new Audio("jumpscare.mp4");
+
+    // Khi trang load (ngay sau khi submit form)
+    window.onload = () => {
+      // phát âm thanh thật
+      sound.play().catch(() => {
+        console.log("Trình duyệt chặn autoplay có tiếng.");
+      });
+
+      // video hiển thị đồng bộ
+      video.play();
+    };
+  </script>
+</body>
+</html>
